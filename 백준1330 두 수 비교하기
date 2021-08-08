@@ -1,0 +1,28 @@
+import java.util.Scanner; // 사용자로부터 값을 입력받기 위해 util 패키지의 Scanner 클래스 사용 
+
+public class Test {
+	public static void main(String[] args){
+		
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt(); // 사용자로부터 값을 1개 입력받아 Integer로 처리 
+		int b = sc.nextInt(); // 사용자로부터 값을 1개 입력받아 Integer로 처리 
+		
+		sc.close(); // Scanner 닫기(종료) 
+		
+    // a와 b조건을 만족해야 제일 바깥의 if문 실행 
+		if(-10000<=a && b<=10000) { 
+		if(a>b) {
+			System.out.println(">");
+		}
+		else if(a<b) {
+			System.out.println("<");
+		}
+		else {
+			System.out.println("==");
+		}
+	} else {
+		System.out.println("범위에 알맞지 않은 숫자를 입력하셨습니다");
+	} // a,b 조건을 만족하지 않는다면 if문 탈출하여 else로 
+}
+}
+
