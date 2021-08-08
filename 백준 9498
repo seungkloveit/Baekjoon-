@@ -1,0 +1,30 @@
+import java.util.Scanner; // 사용자로부터 값을 입력받기 위해 Scanner 클래스 사용 
+
+public class Test {
+	public static void main(String[] args){
+		
+		Scanner sc = new Scanner(System.in);
+		int jumsu=sc.nextInt(); // 사용자가 입력한 jumsu값 integer 형변환하여 jumsu 변수에 저장 
+		
+		if(jumsu>=90 && jumsu<=100) {
+			System.out.println("A");
+		}
+		
+		else if(jumsu>=80 && jumsu<=89){
+			System.out.println("B");
+		}
+		
+		else if(jumsu>=70 && jumsu<=79){
+			System.out.println("C");
+		}
+		
+		else if(jumsu>=60 && jumsu<=69){
+			System.out.println("D");
+		}
+		
+		else { 
+			System.out.println("F");
+		}
+		
+	}
+}
