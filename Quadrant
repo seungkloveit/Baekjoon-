@@ -1,0 +1,28 @@
+import java.util.Scanner; 
+
+public class Test {
+	public static void main(String[] args){
+		
+		Scanner sc = new Scanner(System.in); // 사용자로부터 값을 입력받기 위해 Scanner 클래스를 사용한다. 
+		int x=sc.nextInt(); // 사용자로부터 입력받은 x값을 integer(정수)형변환 하여 변수 x에 저장한다. 
+		int y=sc.nextInt(); // 사용자로부터 입력받은 y값을 integer(정수)형변환 하여 변수 y에 저장한다. 
+		
+		if((x>=-1000 && x<=1000) && (y>=-1000 && y<=1000)){ // 입력받은 x와 y값은 모두 -1000 이상이고 1000 이하를 만족해야 한다. 
+			if(x>0 && y>0) { // x와 y값이 모두 양수라면 
+				System.out.println("1"); // 1사분면을 출력한다. 
+			}
+			
+			else if(x<0 && y>0) { //x는 음수이고 y는 양수라면 
+				System.out.println("2"); // 2사분면을 출력한다. 
+			}
+			
+			else if(x<0 && y<0) { //x는 음수이고 y는 음수이면 
+				System.out.println("3"); // 3사분면을 출력한다. 
+			}
+			
+			else {
+				System.out.println("4"); // 1,2,3사분면에 모두 해당하지 않는다면 4사분면 출력 
+			}
+		}
+	}
+}
