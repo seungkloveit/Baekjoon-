@@ -1,0 +1,24 @@
+import java.util.Scanner; 
+
+public class Test {
+	public static void main(String[] args){
+		
+		Scanner sc = new Scanner(System.in);
+		int year=sc.nextInt(); // 사용자로부터 연도 값을 입력받은 후 int형으로 형변환한다. 
+		
+		if(year>=1 && year<=4000) { // 연도의 범위가 1보다 크거나 같고 4000보다 작거나 같은 자연수여야 하므로 if 조건문을 왼쪽과 같이 설정해준다. 
+			if((year%4==0)&&((year%100!=0)||(year%400==0))){ // 연도는 4의 배수이면서(&&) 100의 배수가 아닐 때(!=) 또는(||) 400의 배수 일 때 이므로 왼쪽과 같이 if문 내의 중첩 if문 작성 
+				System.out.println("1"); // 윤년 연도에 해당하므로 1을 출력한다. 
+			}
+			else {
+				System.out.println("0"); // 윤년 연도에 해당하지 않으므로 0을 출력한다. 
+			}
+		}
+		
+		else { 
+		
+			System.out.println("숫자 범위에서 벗어났습니다.4000이하의 자연수로 입력하세요"); // 연도의 범위가 1보다 크거나 같지 않고 4000보다 작거나 같은 자연수가 아니면 조건에 부합하는 숫자가 아니므로 다른 수를 입력하도록 한다. 
+		}
+		sc.close(); // 사용자로부터 Scanner입력을 중단한다. 
+	}
+}
