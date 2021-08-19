@@ -1,0 +1,25 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException; // throw를 이용하기 위해 import문 선언 
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+
+public class Test {
+	public static void main(String[] args) throws IOException {
+	   BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	   BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	   StringTokenizer st;
+	
+	   int a = Integer.parseInt(br.readLine());
+	   for(int i=0;i<a;i++) {
+		   st = new StringTokenizer(br.readLine());
+		   bw.write((Integer.parseInt(st.nextToken())+Integer.parseInt(st.nextToken()))+"\n");
+		   // readLine() 이용 시 리턴값을 String으로 고정되기에 String이 아닌 다른 타입(Int)으로 입력을 받으려면 형변환 필요
+		   // Read한 데이터는 Line 단위로만 나눠지기에 공백단위로 데이터를 가공하려면 따로 작업 필요. StringTokenizer에 nextTocken()함수를 쓰면 
+		   // readLine()을 통해 입력받은 값을 공백 단위로 구분하여 순서대로 호출 가능 
+		   
+	   }
+	   bw.close(); // BufferedWriter의 경우 버퍼를 잡아 놓았기 때문에 반드시 flush() / close()를 호출해주어 뒤처리를 해주어야 한다. 
+	   }
+}
