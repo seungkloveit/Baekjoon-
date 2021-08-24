@@ -1,0 +1,27 @@
+import java.util.Scanner; 
+
+public class Test {
+	public static void main(String[] args) {
+	
+	Scanner sc = new Scanner(System.in);
+	
+	int n = sc.nextInt();
+	if(n<10) {
+		n*=10; // 입력한 수가 10 미만이면 n에 10을 곱해준다.
+	}
+	int left,right,cnt=0, sum=n; // left,right 두 자리 수를 각각 더해야 하므로 변수 선언 + 몇 사이클을 도는지 cnt 변수 선언 + 새로운 수 비교 위해 sum 선언 + 초기값 n 
+	
+	while(true) { // while문을 true로 반복시킨다. 
+		left=sum/10; // left가 두 자리수 중 첫번째. 즉 10의 자리수이므로 10으로 나누고 몫을 전달
+		right=sum%10; // right는 1의 자리 수 이므로 10으로 나눴을 때 나머지를 전달
+		sum=left+right; // sum에 left와 right를 더한다. 
+		
+		sum=right*10+sum%10; //2+6=8와 같은 새로운 수는 right를 10의 자리 수로, 8은 일의 자리 수로 만드므로 right에 10을 곱하고 sum에 10으로 나누고 나머지 수를 더한다.
+		cnt++; // 한 사이클 돌고 cnt값을 올려준다. 
+		if(sum==n) break; // 사이클을 끝내고 새로운 수 값이 입력한 값과 같으면 break문으로 while문 탈출 
+	}
+	System.out.println(cnt); // while문이 끝나고 cnt 출력 
+	  }
+	}
+
+
