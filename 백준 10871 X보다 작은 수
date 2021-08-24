@@ -1,0 +1,25 @@
+import java.util.Scanner; 
+
+public class Test {
+	public static void main(String[] args) {
+	
+	    Scanner sc = new Scanner(System.in);
+	    
+	    int N = sc.nextInt();
+	    int X = sc.nextInt(); // N과 X를 입력받아야 하므로 변수명을 N,X로 설정 
+	    int arr[]=new int[N]; // int형 배열인 arr[] 생성 
+	    
+	    for(int i=0;i<N;i++) {
+	    	arr[i]=sc.nextInt(); //arr[]배열 안에 들어가는 숫자는 Scanner을 이용하여 사용자로부터 입력받은 값을 int형으로 변환하여 넣어야 한다. 
+	    }
+	    
+	    sc.close();
+	    
+	    for(int i=0;i<N;i++) {
+	    	if(arr[i]<X) { // 배열 인덱스에서 i값을 하나씩 증가시켜보면서 X보다 작은 수를 출력한다. 
+	    		System.out.println(arr[i]+"");
+	    	}
+	    }
+	  
+	  }
+	}
